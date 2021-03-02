@@ -1,8 +1,9 @@
 def getprefix(guildid):
 
     from pymongo import MongoClient
+    import os
 
-    cluster = MongoClient("mongodb+srv://Deek:6nTchtyLR5DUb9I8@todd.cprq1.mongodb.net/todd-data?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE")
+    cluster = MongoClient(os.environ.get("TODDMONGOPREFIX"))
     database = cluster["todd-data"]
     collection = database["prefix"]
 
