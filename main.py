@@ -3,7 +3,7 @@ from discord.ext import commands, tasks
 import os
 from utils import myfunctions
 import json
-from itertools import cycle
+from keep_alive import keep_alive
 
 # Prefix finder and other things
 
@@ -85,4 +85,5 @@ for file in os.listdir("./cogs"):
     if file.endswith(".py"):
         client.load_extension(f"cogs.{file[:-3]}")
 
+keep_alive()
 client.run(os.environ.get('TODD_TOKEN'))
