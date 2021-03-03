@@ -1,0 +1,14 @@
+{
+  "embed_title": "HackEx Help Documentation",
+  "embed_desc":"These are all the HackEx specific commands. If an argument is surrounded by [] then it is required, however arguments surrounded by {} are optional.",
+  "help": [
+    {
+      "command": "hackex",
+      "description": "Returns this help documentation."
+    },
+    {
+      "command": "hackex leaderboard {amount}",
+      "description": "Sends the current months leaderboard. Defaults to the top 10, however you can access up to 50 players by specifying `{amount}`."
+    }
+  ]
+}

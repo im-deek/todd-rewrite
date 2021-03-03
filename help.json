@@ -1,8 +1,14 @@
 {
+  "embed_title": "Help Documentation",
+  "embed_desc": "These are all the commands for Todd. If an argument is surrounded by [] then it is required, however arguments surrounded by {} are optional.",
   "help": [
     {
       "command": "ping",
       "description": "Returns pong and the latency to check if the bot is up."
+    },
+    {
+      "command": "help",
+      "description": "Returns the help documentation."
     },
     {
       "command": "prefix {newPrefix}",
@@ -11,6 +17,10 @@
     {
       "command": "pp {user}",
       "description": "I don't think I need to explain this one. `{user}` must be a mention or a username with the discriminator."
+    },
+    {
+      "command": "hackex",
+      "description": "Displays all HackEx related commands."
     }
   ]
 }

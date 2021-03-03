@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from utils import myfunctions
 import os
 
-cluster = MongoClient(os.environ.get("TODDMONGOPREFIX"))
+cluster = MongoClient(os.environ.get("TODD_MONGO_PREFIX"))
 database = cluster["todd-data"]
 collection = database["prefix"]
 
