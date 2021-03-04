@@ -19,7 +19,7 @@ class Trade(commands.Cog):
         if command == "auth" and ctx.author.id == 321732493764067329:
 
             guild = ctx.guild
-            results = collection.find({"guild": guild.id})
+            results = collection.find({"_id": guild.id})
 
             if value1 == None or value1.lower() == "false":
                 auth = False
