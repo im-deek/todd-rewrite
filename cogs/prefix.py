@@ -27,17 +27,17 @@ class Prefix(commands.Cog):
 
         else:
             newPrefix = str(value)
-            results = collection.find({"guild": guild.id})
+            results = collection.find({"_id": guild.id)
 
             if not list(results):
                 all = collection.find({})
                 total = len(list(all))
-                collection.insert_one({"_id": total, "guild": guild.id, "name": guild.name, "prefix": newPrefix})
+                collection.insert_one({"_id": guild.id, "name": guild.name, "prefix": newPrefix})
             else:
-                collection.update_one({"guild": guild.id}, {"$set": {"prefix": newPrefix}})
+                collection.update_one({"_id": guild.id}, {"$set": {"prefix": newPrefix}})
 
             response = discord.Embed(title="Prefix Updated", colour=colour)
-            response.description = (f"The current prefix has been updated to `{newPrefix}`")
+            response.description = f"The current prefix has been updated to `{newPrefix}`"
             await ctx.send(embed=response)
 
 

@@ -7,10 +7,13 @@ def getprefix(guildid):
     database = cluster["todd-data"]
     collection = database["guildinfo"]
 
-    results = collection.find({"guild":guildid})
+    results = collection.find({"_id":guildid})
     for result in results:
-        currentPrefix = result["prefix"]
-        return currentPrefix
+        try:
+            currentPrefix = result["prefix"]
+            return currentPrefix
+        except:
+            pass
     return "$"
 
 def gethelpdoc(filename):
