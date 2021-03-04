@@ -32,7 +32,7 @@ class Prefix(commands.Cog):
             if not list(results):
                 all = collection.find({})
                 total = len(list(all))
-                collection.insert_one({"_id": guild.id, "name": guild.name, "prefix": newPrefix})
+                collection.insert_one({"guildid": guild.id, "name": guild.name, "prefix": newPrefix})
             else:
                 collection.update_one({"_id": guild.id}, {"$set": {"prefix": newPrefix}})
 
