@@ -29,9 +29,9 @@ class Trade(commands.Cog):
             if not list(results):
                 all = collection.find({})
                 total = len(list(all))
-                collection.insert_one({"_id": total, "guild": guild.id, "name": guild.name, "trading": auth})
+                collection.insert_one({"_id": guild.id, "name": guild.name, "trading": auth})
             else:
-                collection.update_one({"guild": guild.id}, {"$set": {"trading": auth}})
+                collection.update_one({"_id": guild.id}, {"$set": {"trading": auth}})
 
             response = discord.Embed(title="Trading status updated", description=f"Changed to `{auth}`")
             await ctx.send(embed=response)
