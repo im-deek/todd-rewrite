@@ -27,7 +27,7 @@ class Prefix(commands.Cog):
 
         else:
             newPrefix = str(value)
-            results = collection.find({"_id": guild.id)
+            results = collection.find({"_id": guild.id})
 
             if not list(results):
                 all = collection.find({})
