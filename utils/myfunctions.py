@@ -5,7 +5,7 @@ def getprefix(guildid):
 
     cluster = MongoClient(os.environ.get("TODD_MONGO_PREFIX"))
     database = cluster["todd-data"]
-    collection = database["prefix"]
+    collection = database["guildinfo"]
 
     results = collection.find({"guild":guildid})
     for result in results:

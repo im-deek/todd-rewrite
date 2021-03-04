@@ -6,7 +6,7 @@ import os
 
 cluster = MongoClient(os.environ.get("TODD_MONGO_PREFIX"))
 database = cluster["todd-data"]
-collection = database["prefix"]
+collection = database["guildinfo"]
 
 class Prefix(commands.Cog):
 
